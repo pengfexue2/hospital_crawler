@@ -84,10 +84,10 @@ for hospital in hospitals:
                 answer = subitem.dd.get_text(strip=True)
             temp_dict[title]=answer
             print(title,answer)
-    excel_dict[hospital]=temp_dict
-    print(temp_dict)
-    df=df.append([{"医院名称":hospital,"医院类型":temp_dict["医院类型："],"医院等级":temp_dict["医院等级："],"医院地址":temp_dict["医院地址："],"咨询电话":temp_dict["咨询电话："]}],ignore_index=True)
-    print("======================")
+        excel_dict[hospital]=temp_dict
+        print(temp_dict)
+        df=df.append([{"医院名称":hospital,"医院类型":temp_dict["医院类型："],"医院等级":temp_dict["医院等级："],"医院地址":temp_dict["医院地址："],"咨询电话":temp_dict["咨询电话："]}],ignore_index=True)
+        print("======================")
 
 
 df.to_excel("result.xls")
